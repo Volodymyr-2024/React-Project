@@ -9,11 +9,21 @@ import axios from "axios";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
 
+const formStyles = {
+  padding: "32px 0 0 0",
+};
+
+const inputStyles = {
+  color: "#282828",
+  backgroundColor: "#fff",
+  border: "1px solid #ddd",
+};
+
 function ShoppingCart() {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.products || []);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const [orderSending, setOrderSending] = useState(false);
   const items = cart.reduce((total, product) => total + product.quantity, 0);
   const totalPrice = cart
     .reduce((total, product) => total + product.total_price, 0)
@@ -22,16 +32,6 @@ function ShoppingCart() {
 
   const handleContinueShopping = () => {
     navigate("/allproducts");
-  };
-
-  const formStyles = {
-    padding: "32px 0 0 0",
-  };
-
-  const inputStyles = {
-    color: "#282828",
-    backgroundColor: "#fff",
-    border: "1px solid #ddd",
   };
 
   const submitCart = async (formData) => {
@@ -50,12 +50,12 @@ function ShoppingCart() {
     };
 
     try {
-      const response = await axios.post(APIPost, dataToSend);
-      setOpenModal(true);
+      await axios.post(APIPost, dataToSend);
+      setOrderSending(true);
       setIsModalVisible(true);
     } catch (error) {
       console.error("Error submitting order:", error);
-      setOpenModal(false);
+      setOrderSending(false);
       setIsModalVisible(true);
     }
   };
@@ -105,7 +105,7 @@ function ShoppingCart() {
         </>
       )}
       {isModalVisible && (
-        <Modal message={openModal} onClose={() => setIsModalVisible(false)} />
+        <Modal message={orderSending} onClose={setIsModalVisible} />
       )}
     </div>
   );

@@ -14,7 +14,12 @@ function Modal({ message, onClose }) {
 
   const cleanCart = () => {
     dispatch(deleteCart());
-    onClose();
+    onClose(false);
+    setIsModalClosed(true);
+  };
+
+  const closeModal = () => {
+    onClose(false);
     setIsModalClosed(true);
   };
 
@@ -32,7 +37,7 @@ function Modal({ message, onClose }) {
       ) : (
         <div className={styles.modal}>
           <p>Failed to submit the order. Please try again.</p>
-          <button onClick={cleanCart} className={styles.closeButton}>
+          <button onClick={closeModal} className={styles.closeButton}>
             <img src={modal_x} alt="button_modal_close" />
           </button>
         </div>
