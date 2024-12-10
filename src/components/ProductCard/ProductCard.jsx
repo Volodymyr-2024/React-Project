@@ -40,6 +40,7 @@ function ProductCard() {
         total_price: total_price,
       })
     );
+    setQuantity(1);
   };
 
   return (

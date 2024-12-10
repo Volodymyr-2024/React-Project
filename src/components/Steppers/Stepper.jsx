@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import styles from "./Stepper.module.css";
 import minus from "../../assets/minus.svg";
 import plus from "../../assets/plus.svg";
@@ -8,6 +8,12 @@ import { decrementQuantity, incrementQuantity } from "../../redux/cartSlice";
 function Stepper({ quantity, id, updateRedux = false, readCount }) {
   const [count, setCount] = useState(quantity || 1);
   const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+    if (quantity) {
+      setCount(quantity);
+    }
+  }, [quantity]);
 
   useEffect(() => {
     if (readCount) {
