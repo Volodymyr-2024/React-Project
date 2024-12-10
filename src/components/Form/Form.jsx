@@ -53,8 +53,13 @@ function Form({ formStyles, inputStyles, buttonStyles, buttonName, click }) {
       onSubmit={click ? handleSubmit(click) : handleSubmit(onSubmit)}
       style={formStyles}
     >
-      {inputs.map(({ name, type, placeholder, validation }) => (
-        <div key={name} className={styles.container_input}>
+      {inputs.map(({ name, type, placeholder, validation }, index) => (
+        <div
+          key={name}
+          className={`${styles.container_input} ${
+            index === inputs.length - 1 ? "" : styles.notLast
+          }`}
+        >
           <input
             {...register(name, validation)}
             type={type}

@@ -1,7 +1,7 @@
 import HeaderCategory from "../components/HeaderCategory/HeaderCategory";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 
-function CartPage(props) {
+function CartPage() {
   return (
     <div>
       <HeaderCategory

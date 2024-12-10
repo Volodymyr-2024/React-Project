@@ -12,7 +12,7 @@ import { useState } from "react";
 function ShoppingCart() {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.products || []);
-  const [isModalVisible, setIsModalVisible] = useState(false); // Управление модальным окном
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const items = cart.reduce((total, product) => total + product.quantity, 0);
   const totalPrice = cart
@@ -51,12 +51,12 @@ function ShoppingCart() {
 
     try {
       const response = await axios.post(APIPost, dataToSend);
-      setOpenModal(true); // Устанавливаем сообщение
-      setIsModalVisible(true); // Показываем модальное окно
+      setOpenModal(true);
+      setIsModalVisible(true);
     } catch (error) {
       console.error("Error submitting order:", error);
       setOpenModal(false);
-      setIsModalVisible(true); // Показываем модальное окно с ошибкой
+      setIsModalVisible(true);
     }
   };
 

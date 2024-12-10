@@ -12,7 +12,6 @@
   box-sizing: border-box;
   border: 1px solid #ffffff;
   border-radius: 6px;
-  margin-bottom: 16px;
   padding: 16px 32px;
   background: transparent;
   max-height: 58px;
@@ -21,6 +20,9 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 130%;
+}
+.notLast input {
+  margin-bottom: 16px;
 }
 #form_discount::placeholder {
   font-family: "Montserrat", sans-serif;
