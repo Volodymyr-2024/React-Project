@@ -5,9 +5,18 @@
   border-radius: 12px;
   position: relative;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  transform: translate(0%, -1%);
 }
 .card:hover .button {
   display: block;
+}
+.button {
+  transition: transform 2.9s;
 }
 .title_container > h5 {
   width: 252px;

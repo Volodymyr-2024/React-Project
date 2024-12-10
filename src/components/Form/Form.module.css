@@ -48,6 +48,7 @@
   background: #ffffff;
   border: none;
   font-family: "Montserrat", sans-serif;
+  transition: transform 0.3s, box-shadow 0.3s ease;
 }
 .button:disabled {
   background-color: #858080;
@@ -56,6 +57,8 @@
   background-color: #282828;
   color: #fff;
   cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
 }
 .submitted {
   color: #0d50ff;

@@ -1,6 +1,10 @@
 .cart_container {
   position: relative;
 }
+.quantity:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
+}
 .quantity {
   position: absolute;
   top: 7px;
@@ -17,4 +21,5 @@
   align-items: center;
   width: 26px;
   height: 26px;
+  transition: transform 0.3s, box-shadow 0.3s ease;
 }

@@ -13,7 +13,9 @@ function Promotions() {
         Amazing Discounts <br />
         on Pets Products!
       </h1>
-      <button onClick={handleClick}>Check out</button>
+      <button className={styles.button} onClick={handleClick}>
+        Check out
+      </button>
     </div>
   );
 }

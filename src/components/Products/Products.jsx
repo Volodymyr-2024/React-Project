@@ -73,20 +73,6 @@ function Products({ categoryId, discount, countSales }) {
 
   return (
     <div className={styles.products}>
-      {/* <pre>
-        {JSON.stringify(
-          {
-            // filteredProducts,
-            minPrice,
-            maxPrice,
-            discountOnly,
-            sort,
-          },
-          null,
-          2
-        )}
-      </pre> */}
-
       {status === "loading" && (
         <p style={{ marginLeft: "40px", fontSize: "24px" }}>Loading...</p>
       )}

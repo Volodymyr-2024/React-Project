@@ -26,6 +26,10 @@
 .footer_logo > a > img {
   margin-right: 16px;
   cursor: pointer;
+  transition: transform 0.3s;
+}
+.footer_logo > a > img:hover {
+  transform: scale(1.1);
 }
 .footer_info {
   font-weight: 600;

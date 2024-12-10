@@ -13,6 +13,11 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+.container_image > img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
 }
 .title_container {
   width: 548px;
@@ -26,6 +31,7 @@
   letter-spacing: 0.03em;
   color: #282828;
   margin-bottom: 32px;
+  transition: transform 0.3s, box-shadow 0.3s ease;
 }
 .price {
   display: flex;
@@ -39,6 +45,7 @@
   color: #282828;
   align-self: center;
   margin-right: 16px;
+  transition: transform 0.3s, text-shadow 0.3s ease;
 }
 .price > h4 {
   font-weight: 500;
@@ -47,6 +54,30 @@
   text-decoration: line-through;
   color: #8b8b8b;
   align-self: flex-end;
+  transition: transform 0.3s, text-shadow 0.3s ease;
+}
+.price > h3:hover {
+  transform: scale(1.1);
+  text-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
+}
+.price > h4:hover {
+  transform: scale(1.1);
+  text-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
+}
+.title:hover {
+  transform: scale(1.02);
+  text-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
+}
+.discount:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
+}
+.title_container > h3:hover {
+  transform: scale(1.02);
+  text-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
+}
+.title_container > h3 {
+  transition: transform 0.3s, text-shadow 0.3s ease;
 }
 .discount {
   font-weight: 600;
@@ -58,6 +89,7 @@
   padding: 4px 8px;
   background: #0d50ff;
   align-self: flex-start;
+  transition: transform 0.3s, box-shadow 0.3s ease;
 }
 .add_to_cart {
   display: flex;
@@ -85,10 +117,13 @@
   background: #0d50ff;
   width: 316px;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s ease;
 }
 .button_cart:hover {
   background: #282828;
   color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
 }
 @media (max-width: 1260px) {
   .title_container {
