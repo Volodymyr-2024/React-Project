@@ -1,0 +1,144 @@
+.form {
+  width: 496px;
+  max-height: 360px;
+  padding: 32px;
+  position: relative;
+}
+.container_input {
+  position: relative;
+}
+.container_input > input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  padding: 16px 32px;
+  background: transparent;
+  max-height: 58px;
+  font-family: "Montserrat", sans-serif;
+  color: #aeeeee;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+}
+#form_discount::placeholder {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+}
+#form_cart::placeholder {
+  color: #8b8b8b;
+  background-color: #fff;
+}
+.button {
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  text-align: center;
+  color: #282828;
+  border-radius: 6px;
+  padding: 16px 32px;
+  margin-top: 32px;
+  background: #ffffff;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+.button:disabled {
+  background-color: #858080;
+}
+.button:hover:enabled {
+  background-color: #282828;
+  color: #fff;
+  cursor: pointer;
+}
+.submitted {
+  color: #0d50ff;
+}
+.span {
+  position: absolute;
+  bottom: 17px;
+  left: 33px;
+  font-size: 16px;
+  color: #e77f7f;
+  margin-top: 5px;
+}
+.errorMessage {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.errorInput {
+  border-color: #ff0000;
+}
+.error {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/*--------------------------------------------------------------------*/
+@media (max-width: 1423px) {
+  .form_container > img {
+    max-width: 630px;
+    margin-top: 71px;
+  }
+}
+@media (max-width: 1270px) {
+  .form_container > img {
+    max-width: 456px;
+    margin-top: 135px;
+  }
+  .form {
+    width: 396px;
+    max-height: 360px;
+    padding: 16px;
+    position: relative;
+  }
+  .successMessage {
+    bottom: 86px;
+    left: 56px;
+  }
+}
+@media (max-width: 996px) {
+  .container {
+    padding: 10px 20px 0 20px;
+    max-height: 670px;
+  }
+  .container > h2 {
+    margin-bottom: 0;
+  }
+  .form_container {
+    flex-direction: column;
+  }
+  .form_container > img {
+    max-width: 456px;
+    margin-top: 0;
+  }
+  .form {
+    width: 100%;
+  }
+  .successMessage {
+    left: 280px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 10px 0 10px;
+    margin: 0 20px;
+  }
+  .successMessage {
+    bottom: 86px;
+    left: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 10px 0 10px;
+    margin: 0 10px;
+  }
+}

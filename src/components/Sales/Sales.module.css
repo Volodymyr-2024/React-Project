@@ -1,0 +1,33 @@
+.products {
+  margin: 0 40px 80px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/*------------------------------------------------------------*/
+@media (max-width: 1300px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    justify-content: center;
+  }
+}
+@media (max-width: 673px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    justify-content: center;
+  }
+  .container {
+    margin: 20px 10px 40px 10px;
+  }
+}

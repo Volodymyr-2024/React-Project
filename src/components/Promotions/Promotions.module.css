@@ -1,0 +1,63 @@
+.container {
+  background-image: url("../../assets/foto_animals.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  margin-bottom: 80px;
+}
+.container > h1 {
+  padding: 80px 40px 40px 40px;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 110%;
+  color: #ffffff;
+}
+.container > button {
+  margin-left: 40px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+  color: #ffffff;
+  padding: 16px 56px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0d50ff;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+/* -----------------------------------------------------------------------------------*/
+@media (max-width: 1024px) {
+  .container > h1 {
+    font-size: 72px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    min-height: 300px;
+    margin-bottom: 40px;
+    background-position: left;
+  }
+  .container > h1 {
+    padding: 40px 20px 20px 40px;
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    min-height: 200px;
+    margin-bottom: 20px;
+    background-position: left;
+  }
+  .container > h1 {
+    font-size: 28px;
+    padding: 20px 20px 10px 10px;
+  }
+  .container > button {
+    font-size: 16px;
+    padding: 8px 28px;
+    margin-left: 10px;
+    
+  }
+}
