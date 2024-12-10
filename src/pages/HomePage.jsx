@@ -2,7 +2,7 @@ import Categories from "../components/Categories/Categories";
 import Promotions from "../components/Promotions/Promotions";
 import Discount from "../components/Discount/Discount";
 import HeaderCategory from "../components/HeaderCategory/HeaderCategory";
-import Sales from "../components/Sales/Sales";
+import Products from "../components/Products/Products";
 
 function HomePage() {
   return (
@@ -22,7 +22,7 @@ function HomePage() {
         link="/allsales"
         hr={true}
       />
-      <Sales countSales={4} />
+      <Products countSales={4} discount="yes" />
     </div>
   );
 }

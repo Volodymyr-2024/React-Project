@@ -1,11 +1,13 @@
 import Products from "../components/Products/Products";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import HeaderCategory from "../components/HeaderCategory/HeaderCategory";
 import { useSelector } from "react-redux";
 import Sorter from "../components/Sorter/Sorter";
 import BreadCrumbs from "../components/BreadCrumbs/BreadCrumbs";
 
 function CategoriesIdPage() {
+  const location = useLocation();
+  const currentPath = location.pathname.split("/").filter(Boolean);
   const { categoryId } = useParams();
   const categories = useSelector((state) => state.categories.categories);
   const category = categories.find(
@@ -17,7 +19,7 @@ function CategoriesIdPage() {
 
   return (
     <div>
-      <BreadCrumbs name={"categories"} id={Number(categoryId)}/>
+      <BreadCrumbs name={currentPath[0]} id={Number(categoryId)} />
       <HeaderCategory nameCategory={category.title} />
       <Sorter />
       <Products categoryId={Number(categoryId)} />

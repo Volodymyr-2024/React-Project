@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import styles from "./BreadCrumbs.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -11,8 +10,6 @@ const paths = [
 ];
 
 function BreadCrumbs({ name, id }) {
-  //   const location = useLocation();
-  //   const currentPath = location.pathname.split("/").filter(Boolean);
   const products = useSelector((state) => state.products.products);
   const categories = useSelector((state) => state.categories.categories);
 
@@ -35,8 +32,6 @@ function BreadCrumbs({ name, id }) {
       )?.title;
       product = products.find((product) => product.id === id)?.title;
     }
-
-    console.log(`All: ${all}`, `Category:${category}`, `Product:${product}`);
     return { all, category, product, categoryId };
   }
 
@@ -44,12 +39,6 @@ function BreadCrumbs({ name, id }) {
 
   return (
     <nav className={styles.container}>
-      {/* <div>
-        <p>Текущий путь: {location.pathname}</p>
-        <p>
-          Query-параметры: {currentPath[0]} --- {currentPath[1]}
-        </p>
-      </div> */}
       <ul className={styles.ul_container}>
         <li>
           <Link to="/">Main page</Link>

@@ -44,7 +44,7 @@ function handleSortProducts(products, minPrice, maxPrice, discountOnly, sort) {
   return newProducts;
 }
 
-function Products({ categoryId, discount }) {
+function Products({ categoryId, discount, countSales }) {
   const products = useSelector((state) => state.products.products);
   const status = useSelector((state) => state.products.status);
 
@@ -92,7 +92,7 @@ function Products({ categoryId, discount }) {
       )}
       {status === "succeeded" && (
         <div className={styles.container}>
-          {filteredProducts.map((product) => (
+          {filteredProducts.slice(0, countSales).map((product) => (
             <Product key={product.id} product={product} />
           ))}
         </div>

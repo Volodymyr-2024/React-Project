@@ -1,7 +1,9 @@
+import NotFound from "../components/NotFound/NotFound";
+
 function NotFoundPage(props) {
   return (
     <div>
-      <h1>NotFoundPage</h1>
+      <NotFound />
     </div>
   );
 }
