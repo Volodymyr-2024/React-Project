@@ -88,7 +88,7 @@ function Products({ categoryId, discount, countSales }) {
   }
 
   useEffect(() => {
-    const randomItems = getRandomItems(products);
+    const randomItems = getRandomItems(filteredProducts);
     setRandomProducts(randomItems);
   }, [products]);
 
