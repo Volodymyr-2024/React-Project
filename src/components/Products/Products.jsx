@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import styles from "./Products.module.css";
 import Product from "../Product/Product";
 import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function handleSortProducts(products, minPrice, maxPrice, discountOnly, sort) {
   let newProducts = [...products];
@@ -71,6 +72,26 @@ function Products({ categoryId, discount, countSales }) {
     filteredProducts = sortProducts.filter((product) => product.discont_price);
   }
 
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  function getRandomItems(array, count = 4) {
+    const randomItems = [];
+    const tempArray = [...array];
+    for (let i = 0; i < count; i++) {
+      if (tempArray.length === 0) break;
+      const randomIndex = Math.floor(Math.random() * tempArray.length);
+      randomItems.push(tempArray[randomIndex]);
+      tempArray.splice(randomIndex, 1);
+    }
+
+    return randomItems;
+  }
+
+  useEffect(() => {
+    const randomItems = getRandomItems(products);
+    setRandomProducts(randomItems);
+  }, [products]);
+
   return (
     <div className={styles.products}>
       {status === "loading" && (
@@ -78,7 +99,7 @@ function Products({ categoryId, discount, countSales }) {
       )}
       {status === "succeeded" && (
         <div className={styles.container}>
-          {filteredProducts.slice(0, countSales).map((product) => (
+          {(countSales ? randomProducts : filteredProducts).map((product) => (
             <Product key={product.id} product={product} />
           ))}
         </div>
