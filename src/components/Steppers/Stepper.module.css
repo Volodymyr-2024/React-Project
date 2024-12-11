@@ -20,6 +20,7 @@
   height: 58px;
   width: 58px;
   transition: transform 0.3s, box-shadow 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 .button:hover {
   background-color: #0d50ff;

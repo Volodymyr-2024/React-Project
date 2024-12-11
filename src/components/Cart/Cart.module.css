@@ -1,5 +1,6 @@
 .cart_container {
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 .quantity:hover {
   transform: scale(1.2);
