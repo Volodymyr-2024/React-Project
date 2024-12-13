@@ -12,6 +12,17 @@
   font-size: 96px;
   line-height: 110%;
   color: #ffffff;
+  animation: zoomIn 1.5s ease-out;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .container > button {
   margin-left: 40px;

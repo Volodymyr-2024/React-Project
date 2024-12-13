@@ -1,6 +1,6 @@
 import NotFound from "../components/NotFound/NotFound";
 
-function NotFoundPage(props) {
+function NotFoundPage() {
   return (
     <div>
       <NotFound />
