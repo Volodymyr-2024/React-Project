@@ -71,6 +71,9 @@
   color: #e77f7f;
   margin-top: 5px;
 }
+.lastSpan {
+  bottom: 1px;
+}
 .errorMessage {
   color: #ff0000;
   font-weight: bold;

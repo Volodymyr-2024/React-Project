@@ -69,7 +69,13 @@ function Form({ formStyles, inputStyles, buttonStyles, buttonName, click }) {
             style={inputStyles}
           />
           {errors[name] && (
-            <span className={styles.span}>{errors[name].message}</span>
+            <span
+              className={`${styles.span} ${
+                index === inputs.length - 1 ? styles.lastSpan : ""
+              }`}
+            >
+              {errors[name].message}
+            </span>
           )}
         </div>
       ))}
