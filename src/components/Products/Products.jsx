@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import styles from "./Products.module.css";
 import Product from "../Product/Product";
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 function handleSortProducts(products, minPrice, maxPrice, discountOnly, sort) {
   let newProducts = [...products];
@@ -61,7 +60,7 @@ function Products({ categoryId, discount, countSales }) {
     sort
   );
 
-  let filteredProducts = sortProducts;
+  let filteredProducts = [...sortProducts];
 
   if (categoryId) {
     filteredProducts = sortProducts.filter(
@@ -72,9 +71,7 @@ function Products({ categoryId, discount, countSales }) {
     filteredProducts = sortProducts.filter((product) => product.discont_price);
   }
 
-  const [randomProducts, setRandomProducts] = useState([]);
-
-  function getRandomItems(array, count = 4) {
+  function getRandomItems(array, count) {
     const randomItems = [];
     const tempArray = [...array];
     for (let i = 0; i < count; i++) {
@@ -83,14 +80,10 @@ function Products({ categoryId, discount, countSales }) {
       randomItems.push(tempArray[randomIndex]);
       tempArray.splice(randomIndex, 1);
     }
-
     return randomItems;
   }
 
-  useEffect(() => {
-    const randomItems = getRandomItems(filteredProducts);
-    setRandomProducts(randomItems);
-  }, [products]);
+  const randomProducts = getRandomItems(filteredProducts, countSales);
 
   return (
     <div className={styles.products}>
