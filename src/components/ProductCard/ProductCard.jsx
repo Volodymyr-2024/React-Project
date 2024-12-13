@@ -9,6 +9,8 @@ import { useState } from "react";
 
 function ProductCard() {
   const { id } = useParams();
+  const [buttonName, setButtonName] = useState("Add to cart");
+  const [buttonDisable, setButtonDisable] = useState(false);
   const dispatch = useDispatch();
   const product = useSelector((state) =>
     state.products.products.find((product) => product.id === parseInt(id, 10))
@@ -41,6 +43,12 @@ function ProductCard() {
       })
     );
     setQuantity(1);
+    setButtonName("Added");
+    setButtonDisable(true);
+    setTimeout(() => {
+      setButtonName("Add to cart");
+      setButtonDisable(false);
+    }, 1000);
   };
 
   return (
@@ -68,8 +76,12 @@ function ProductCard() {
         )}
         <div className={styles.add_to_cart}>
           <Stepper quantity={quantity} readCount={getProductQuantity} />
-          <button className={styles.button_cart} onClick={handleAddToCart}>
-            Add to cart
+          <button
+            className={styles.button_cart}
+            onClick={handleAddToCart}
+            disabled={buttonDisable}
+          >
+            {buttonName}
           </button>
         </div>
         <Description text={product.description} />
