@@ -3,9 +3,12 @@ import { API } from "../../constants/api";
 import styles from "./Product.module.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
+import { useState } from "react";
 
 function Product({ product }) {
   const dispatch = useDispatch();
+  const [buttonName, setButtonName] = useState("Add to Cart");
+  const [buttonDisable, setButtonDisable] = useState(false);
 
   function handleAddToCart(event) {
     event.stopPropagation();
@@ -25,6 +28,12 @@ function Product({ product }) {
         created_data: product.createdAt,
       })
     );
+    setButtonName("Added");
+    setButtonDisable(true);
+    setTimeout(() => {
+      setButtonName("Add to Cart");
+      setButtonDisable(false);
+    }, 1000);
   }
 
   return (
@@ -57,8 +66,12 @@ function Product({ product }) {
           </div>
         </div>
       </Link>
-      <button className={styles.button} onClick={handleAddToCart}>
-        Add to Cart
+      <button
+        className={styles.button}
+        onClick={handleAddToCart}
+        disabled={buttonDisable}
+      >
+        {buttonName}
       </button>
     </div>
   );
