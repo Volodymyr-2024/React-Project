@@ -10,8 +10,11 @@
   line-height: 130%;
   text-align: center;
   color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s ease;
 }
 .button:hover {
   background: #282828;
   cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(13, 80, 255, 0.8);
 }
