@@ -67,7 +67,7 @@ function BreadCrumbs({ name, id }) {
         {product && (
           <li>
             <div className={styles.line}></div>
-            <Link to={`/products/${id}`}>{product}</Link>
+            <Link to={`/products/${id}`} className={styles.product}>{product}</Link>
           </li>
         )}
       </ul>
