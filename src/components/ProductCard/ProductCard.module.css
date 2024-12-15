@@ -203,7 +203,7 @@
 }
 @media (max-width: 590px) {
   .container_image {
-    width: 548px;
+    width: 96vw;
     height: 480px;
   }
   .title_container {
@@ -212,7 +212,7 @@
 }
 @media (max-width: 450px) {
   .container_image {
-    width: 350px;
+    width: 96vw;
     height: 314px;
   }
   .title_container {
