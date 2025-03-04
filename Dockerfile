@@ -1,23 +1,18 @@
-# Используем официальный образ Node.js
-FROM node:16
+# Используем официальный легковесный образ Nginx
+FROM nginx:alpine
 
 # Устанавливаем рабочую директорию
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-# Копируем package.json и package-lock.json
-COPY package*.json ./
+# Удаляем дефолтные файлы Nginx (иначе может быть конфликт)
+RUN rm -rf ./*
 
-# Устанавливаем зависимости
-RUN npm install
+# Распаковываем архив с проектом в папку Nginx
+COPY Final_project_example.tar.bz2 /tmp/
+RUN tar -xjf /tmp/Final_project_example.tar.bz2 -C /usr/share/nginx/html --strip-components=1
 
-# Копируем остальные файлы проекта
-COPY . .
-
-# Строим приложение для продакшн
-RUN npm run build
-
-# Открываем порт, на котором будет работать приложение
+# Открываем порт 80
 EXPOSE 80
 
-# Команда для запуска приложения
-CMD ["npx", "serve", "build"]
+# Запускаем Nginx
+CMD ["nginx", "-g", "daemon off;"]
